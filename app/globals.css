@@ -1,7 +1,32 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-  
-  body{
+@tailwind components;
+@tailwind utilities;
+
+body {
     overflow-x: hidden;
-  }
+}
+
+body::-webkit-scrollbar {
+    width: 11px;
+    /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+
+    background: rgb(5, 5, 5);
+    /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #fefefe;
+    /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(125, 125, 125);
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 3px solid #000000;
+    /* creates padding around scroll thumb */
+}
