@@ -1,10 +1,8 @@
-
 import { animate, useMotionValue, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useMeasure } from 'react-use';
 import Card from '../Card';
 import { Movie } from '@/constants/Typings';
-
 
 export default function SmallCarousel({ movies }: { movies: Movie[] }) {
 
@@ -12,10 +10,11 @@ export default function SmallCarousel({ movies }: { movies: Movie[] }) {
     const Slow_Duration = 230;
 
     const [duration, setDuration] = useState(Fast_Duration);
-    const [isFinished, setIsFinished] = useState(true); 
+    const [isFinished, setIsFinished] = useState(true);
     const [reRender, setRerender] = useState(false);
 
-    let [ref, { width }] = useMeasure();
+    // Define the type for the ref and width measurement
+    let [ref, { width }] = useMeasure<HTMLDivElement>();
 
     const xTranslation = useMotionValue(0);
 
@@ -62,7 +61,7 @@ export default function SmallCarousel({ movies }: { movies: Movie[] }) {
                         setIsFinished(true);
                         setDuration(Fast_Duration);
                     }}
-                    className=" absolute left-0 flex gap-5 overflow-clip "
+                    className="absolute left-0 flex gap-5 overflow-clip"
                     ref={ref}
                 >
                     {movies.map((movie, i) => (
