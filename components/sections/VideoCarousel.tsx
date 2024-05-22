@@ -92,11 +92,13 @@ export const VideoCarousel = ({ movies }: Props) => {
                             className="aspect-[9/16] w-[300px] shrink-0 overflow-clip rounded-2xl md:aspect-video md:w-[60vw]"
                         >
                             <Image
-                                className="h-full w-full object-cover"
+                                className="h-full w-full object-cover transition-opacity opacity-0 duration-[2s]"
                                 src={randomFirst ? getImagePath(randomFirst.poster_path) : ''}
-                                alt={"snapshot"}
+                                alt={randomFirst ? getImagePath(randomFirst.title) : ''}
                                 width={1920}
                                 height={1080}
+                                
+                                onLoad={(image) => (image.target as HTMLImageElement).classList.remove('opacity-0')}
                             />
                         </motion.div>
                         <motion.div
@@ -104,22 +106,24 @@ export const VideoCarousel = ({ movies }: Props) => {
                             className="relative aspect-[9/16] w-[300px] shrink-0 overflow-clip rounded-2xl md:aspect-video md:w-[60vw]"
                         >
                             <Image
-                                className="h-full w-full object-cover"
+                                className="h-full w-full object-cover transition-opacity opacity-0 duration-[2s]"
                                 src={randomMovie ? getImagePath(randomMovie.poster_path) : ''}
                                 alt={randomMovie ? getImagePath(randomMovie.title) : ''}
                                 width={1920}
                                 height={1080}
                                 quality={80}
+                                
+                                onLoad={(image) => (image.target as HTMLImageElement).classList.remove('opacity-0')}
                             />
                             <motion.div
                                 variants={{
                                     active: { opacity: 1 },
                                     inactive: { opacity: 0 },
                                 }}
-                                className="absolute bottom-0 left-0 flex w-full flex-col items-center gap-4 p-5 text-lg text-white md:flex-row md:justify-between md:gap-0"
+                                className="absolute bottom-0 left-0 flex w-full flex-col items-center gap-4 p-5 text-lg  text-white md:flex-row md:justify-between md:gap-0"
                             >
-                                <p>{randomMovie?.title}</p>
-                                <Button>Watch now</Button>
+                                <p className=" ">{randomMovie?.title}</p>
+                                <Button className='hover:bg-textBlack hover:text-white duration-500'>Watch now</Button>
                             </motion.div>
                         </motion.div>
                         <motion.div
@@ -130,7 +134,10 @@ export const VideoCarousel = ({ movies }: Props) => {
                             className="aspect-[9/16] w-[300px] shrink-0 overflow-clip rounded-2xl md:aspect-video md:w-[60vw]"
                         >
                             <Image
-                                layout="cover"
+                                className="transition-opacity opacity-0 duration-[2s] object-cover"
+                                onLoad={(image) => (image.target as HTMLImageElement).classList.remove('opacity-0')}
+                            
+                                
                                 src={randomLast ? getImagePath(randomLast.poster_path) : ''}
                                 alt={randomLast ? getImagePath(randomLast.poster_path) : ''}
                                 width={1920}
@@ -150,7 +157,7 @@ export const VideoCarousel = ({ movies }: Props) => {
                 transition={{ duration: 0.4 }}
                 className="-mt-[calc((100vh-(300px*(16/9)))/2)] space-y-3 pt-4 md:-mt-[calc((100vh-(60vw*(9/16)))/2)] "
             >
-                <div className='overflow-hidden space-y-10 flex flex-col gap-10 h-[700px] md:h-[600px]'>
+                <div className='overflow-hidden gap-5 flex flex-col pb-10 '>
                     <div style={{ transform: 'translateX(160px)' }}>
                         <SmallCarousel movies={moviOne} />
                     </div>

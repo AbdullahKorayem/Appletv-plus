@@ -1,7 +1,7 @@
-'use client'
+"use client";
 import { useScroll, useTransform, motion } from "framer-motion";
 import Container from "../Container";
-import Button from '../Button'
+import Button from "../Button";
 import { useRef } from "react";
 import Image from "next/image";
 import { Movie } from "@/constants/Typings";
@@ -10,13 +10,10 @@ import { getRandomMovie } from "@/constants/getMovies";
 
 type Props = {
     movies: Movie[];
-}
-
+};
 
 export default function Hero({ movies }: Props) {
     const randomMovie = getRandomMovie(movies);
-   
-
 
     const videoContainerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
@@ -36,7 +33,7 @@ export default function Hero({ movies }: Props) {
                     className="sticky top-0 "
                     src={getImagePath(randomMovie.poster_path)}
                     placeholder="blur"
-                    layout="responsive"
+                
                     blurDataURL={getImagePath(randomMovie.poster_path)}
                     quality={100}
                     alt={randomMovie.title}
@@ -64,17 +61,22 @@ export default function Hero({ movies }: Props) {
                     <Button className="mb-16" size="large">
                         Stream now
                     </Button>
-                    <p className='flex items-center font-semibold'>
+                    <p className="flex items-center font-semibold">
                         Watch on the
                         <span className="mx-2">
-                            <Image className="" src='/apple_tv_app_icon__cth1s5qlqpyu_xlarge_2x.png' width={38} height={38} alt='apple tv' />
+                            <Image
+                                className="transition-opacity opacity-0 duration-[2s]"
+                                src="/apple_tv_app_icon__cth1s5qlqpyu_xlarge_2x.png"
+                                width={38}
+                                height={38}
+                                alt="apple tv"
+                                onLoad={(image) => (image.target as HTMLImageElement).classList.remove('opacity-0')}
+                            />
                         </span>
                         App.
                     </p>
-
                 </motion.div>
             </Container>
         </div>
-    )
+    );
 }
-

@@ -15,7 +15,7 @@ export default function Products() {
                                 src="/Apple_Music_icon.svg"
                                 width={150}
                                 height={150}
-                                alt="products"
+                                alt="apple-music"
                             />
                        
                     
@@ -23,7 +23,7 @@ export default function Products() {
                                 src="/AppleTVLogo.svg"
                                 width={150}
                                 height={150}
-                                alt="products"
+                                alt="appleTv"
                             />
                        
                        
@@ -31,13 +31,13 @@ export default function Products() {
                                 src="/facetime-ios-icon.svg"
                                 width={150}
                                 height={150}
-                                alt="products"
+                                alt="faceTime"
                             />
                             <Image className="self-center"
                                 src="/ICloud_logo.svg"
                                 width={170}
                                 height={170}
-                                alt="products"
+                                alt="Icloud"
                             />
                     </div>
 
@@ -49,7 +49,7 @@ export default function Products() {
                                     width={20}
                                     className="invert-0"
                                     height={20}
-                                    alt="apple"
+                                    alt="appletvlogo"
                                 />
                             </span>{" "}
                             One
@@ -84,11 +84,11 @@ export default function Products() {
 
                     <div className="flex justify-end items-center   mt-20  ">
                         <Image className="object-fit "
-                        layout="cover"
+                
                             src="/Screenshot 2024-05-20 210148.png"
                             width={920}
                             height={920}
-                            alt="products"
+                            alt="screensshout1"
                         />
                     </div>
                 </div>
@@ -104,7 +104,7 @@ export default function Products() {
                                         width={20}
                                         className="invert-0"
                                         height={20}
-                                        alt="apple"
+                                        alt="applelogoblack"
                                     />
                                 </span>
                                 One 4K TV
@@ -128,7 +128,7 @@ export default function Products() {
                                 src="/apple-tv-4k-hero-select-202210-removebg-preview.png"
                                 width={520}
                                 height={520}
-                                alt="products"
+                                alt="apple tv 4k"
                             />
                         </div>
                     </div>
@@ -150,7 +150,7 @@ export default function Products() {
                                 src="/Screenshot 2024-05-20 213828.png"
                                 width={520}
                                 height={520}
-                                alt="products"
+                                alt="screenshot3"
                             />
                         </div>
                     </div>
